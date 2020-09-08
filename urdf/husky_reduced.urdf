@@ -1,0 +1,1458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="husky_reduced">
+  <link name="base_link" />
+  <joint name="base_link_to_body" type="fixed">
+    <parent link="base_link"/>
+    <child link="body_link"/>
+  </joint>
+  <link
+    name="body_link">
+    <inertial>
+      <origin
+        xyz="4.06758537265656E-06 0.000820071186987414 -0.0130892456746474"
+        rpy="0 0 0" />
+      <mass
+        value="0.650642071200738" />
+      <inertia
+        ixx="0.000702785587982822"
+        ixy="3.10268003525812E-12"
+        ixz="-1.39769952404109E-08"
+        iyy="0.000575707963375727"
+        iyz="3.49464208277368E-05"
+        izz="0.00038021356021992" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/body_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/body_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fr_hip">
+    <inertial>
+      <origin
+        xyz="0.0235659416192397 -5.02975094754526E-05 -0.00302882523131529"
+        rpy="0 0 0" />
+      <mass
+        value="0.043087821298853" />
+      <inertia
+        ixx="9.96889081166613E-06"
+        ixy="7.48752042250553E-08"
+        ixz="-2.39318971572093E-06"
+        iyy="2.495443482671E-05"
+        iyz="5.09645733504537E-09"
+        izz="2.81283771269796E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_hip_frontal"
+    type="revolute">
+    <origin
+      xyz="0.045 0.2087 6.7316E-05"
+      rpy="1.5708 -0.0089958 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="fr_hip" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="fr_hip_frontal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_hip_frontal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fr_hip_frontal_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="fr_femur">
+    <inertial>
+      <origin
+        xyz="0.0977320131555891 0.000213425452149169 0.0151762014845763"
+        rpy="0 0 0" />
+      <mass
+        value="0.141836258887396" />
+      <inertia
+        ixx="2.7823052910979E-05"
+        ixy="4.29443317670773E-09"
+        ixz="-1.68703794772547E-09"
+        iyy="4.88420495545191E-05"
+        iyz="2.55345263711604E-07"
+        izz="6.72264489194492E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_hip_sagittal"
+    type="revolute">
+    <origin
+      xyz="0.103120000000001 0 0"
+      rpy="1.58460354760444 0.709564137847273 -1.5707963267949" />
+    <parent
+      link="fr_hip" />
+    <child
+      link="fr_femur" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="fr_hip_sagittal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_hip_sagittal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fr_hip_sagittal_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="fr_tibia">
+    <inertial>
+      <origin
+        xyz="0.108667402573553 1.03670573461945E-05 -0.00287570362838266"
+        rpy="0 0 0" />
+      <mass
+        value="0.0478195851341902" />
+      <inertia
+        ixx="8.45826029568533E-06"
+        ixy="9.485425634069E-10"
+        ixz="-1.28983370549278E-06"
+        iyy="4.69251077636551E-05"
+        iyz="-1.94160829243736E-09"
+        izz="5.27944193001364E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_tibia.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_tibia.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_knee"
+    type="revolute">
+    <origin
+      xyz="0.179999999999999 0.000595348444745458 0.0431158898809868"
+      rpy="3.13857993756883 0.013474547784072 1.35082136703004" />
+    <parent
+      link="fr_femur" />
+    <child
+      link="fr_tibia" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="fr_knee_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_knee">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fr_knee_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--><link
+    name="fr_fibula">
+    <inertial>
+      <origin
+        xyz="0.170112072730515 -3.34118677169926E-10 -6.135396598686E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0286089978267731" />
+      <inertia
+        ixx="1.22504250160217E-06"
+        ixy="-2.3511926483844E-13"
+        ixz="-4.49710595129967E-08"
+        iyy="4.02627508345098E-05"
+        iyz="2.05500068305621E-14"
+        izz="4.07891301279069E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_fibula.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_fibula.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_control_rod"
+    type="revolute">
+    <origin
+      xyz="-0.0130911226541172 -0.0585544405459958 0"
+      rpy="0 0 0.00228072916830797" />
+    <parent
+      link="fr_tibia" />
+    <child
+      link="fr_fibula" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.10000"
+      upper="1.10000"
+      effort="1000"
+      velocity="1000" />
+  </joint><!-->
+  <link
+    name="fr_ankle1">
+    <inertial>
+      <origin
+        xyz="0.0527701413832593 5.98786159544673E-09 -3.07167094537597E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0716006134744626" />
+      <inertia
+        ixx="9.73912821038023E-06"
+        ixy="9.99833576307028E-12"
+        ixz="-6.12733558966033E-12"
+        iyy="4.80541438877769E-05"
+        iyz="-2.52914459536402E-08"
+        izz="4.65434271131211E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_ankle1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.250980392156863 0.250980392156863 0.250980392156863 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fr_ankle1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_ankle1"
+    type="revolute">
+    <origin
+      xyz="0.332999999999978 0 0"
+      rpy="0.0147095738050274 0 1.29927256648305" />
+    <parent
+      link="fr_tibia" />
+    <child
+      link="fr_ankle1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="fr_ankle1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_ankle1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fr_ankle1_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--><gazebo>
+    <plugin name="Myrobot_ClosedLoopPlugin" filename="libpegasus_gazebo_closed_loop_plugin.so">
+       <joint>add_joint</joint>
+       <child>fr_ankle</child>
+       <parent>fr_fibula</parent>
+       <position>0.316908019061522 -0.0578018005729246 0</position>
+       <rotation>-3.12688307978477 0 1.29927256648305</rotation>
+    </plugin>
+  </gazebo>
+  <joint
+    name="fr_ankle2"
+    type="revolute">
+    <origin
+      xyz="0.316908019061522 -0.0578018005729246 0"
+      rpy="-3.12688307978477 0 1.29927256648305" />
+    <parent
+      link="fr_tibia" />
+    <child
+      link="fr_ankle2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint><!-->
+  <link
+    name="fl_hip">
+    <inertial>
+      <origin
+        xyz="0.0282493684612892 -6.02933629341613E-05 -0.00254584522661777"
+        rpy="0 0 0" />
+      <mass
+        value="0.0359443463061796" />
+      <inertia
+        ixx="9.43685191828271E-06"
+        ixy="7.37780811237925E-08"
+        ixz="-2.39318969539326E-06"
+        iyy="2.44222430667982E-05"
+        iyz="5.0964428440272E-09"
+        izz="2.70762020706881E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_hip_frontal"
+    type="revolute">
+    <origin
+      xyz="-0.045 0.2087 6.7316E-05"
+      rpy="-1.5708 0.0041099 -3.2416" />
+    <parent
+      link="body_link" />
+    <child
+      link="fl_hip" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="fl_hip_frontal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_hip_frontal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fl_hip_frontal_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="fl_femur">
+    <inertial>
+      <origin
+        xyz="0.097735664566592 -8.86668196140028E-05 -0.0151774442732597"
+        rpy="0 0 0" />
+      <mass
+        value="0.141836241024003" />
+      <inertia
+        ixx="2.78209084130127E-05"
+        ixy="-6.86050485994064E-09"
+        ixz="-2.10349354351967E-10"
+        iyy="4.88413151042281E-05"
+        iyz="1.11126612612072E-07"
+        izz="6.72293195789235E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_hip_sagittal"
+    type="revolute">
+    <origin
+      xyz="0.10311999999997 0 0"
+      rpy="1.57704053014338 0.718419414164997 1.5707963267949" />
+    <parent
+      link="fl_hip" />
+    <child
+      link="fl_femur" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="fl_hip_sagittal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_hip_sagittal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fl_hip_sagittal_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="fl_tibia">
+    <inertial>
+      <origin
+        xyz="0.108667372217361 -3.01266882989371E-05 0.00287556526811775"
+        rpy="0 0 0" />
+      <mass
+        value="0.0478195985634725" />
+      <inertia
+        ixx="8.45826258942994E-06"
+        ixy="-9.81410668381142E-09"
+        ixz="1.2897970285412E-06"
+        iyy="4.69254141357913E-05"
+        iyz="-4.22777598113288E-08"
+        izz="5.27941202508793E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_tibia.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_tibia.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_knee"
+    type="revolute">
+    <origin
+      xyz="0.180000000037508 -0.000269248312142284 -0.0431191593767014"
+      rpy="3.13340999472434 0.00610524102154951 1.359428333786" />
+    <parent
+      link="fl_femur" />
+    <child
+      link="fl_tibia" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="fl_knee_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_knee">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fl_knee_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--><link
+    name="fl_fibula">
+    <inertial>
+      <origin
+        xyz="0.173017618887629 8.24402370924737E-07 -0.000119643467643107"
+        rpy="0 0 0" />
+      <mass
+        value="0.0281285567790405" />
+      <inertia
+        ixx="1.21294907481145E-06"
+        ixy="3.09741312563093E-10"
+        ixz="-4.49699929206444E-08"
+        iyy="4.02491489145296E-05"
+        iyz="-3.6919425092119E-09"
+        izz="4.07847285314466E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_fibula.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_fibula.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_control_rod"
+    type="revolute">
+    <origin
+      xyz="-0.0125876240226939 -0.0586633545982407 -0.000403178925974287"
+      rpy="-2.0332093218573E-05 -1.51010961736925E-05 0.0021972420646294" />
+    <parent
+      link="fl_tibia" />
+    <child
+      link="fl_fibula" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint><!-->
+  <link
+    name="fl_ankle1">
+    <inertial>
+      <origin
+        xyz="0.0527701410212171 -1.66704727799782E-09 6.22933769844902E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0716006126035054" />
+      <inertia
+        ixx="9.73912803612692E-06"
+        ixy="-4.16771955149913E-12"
+        ixz="9.95982526725273E-12"
+        iyy="4.80525051443511E-05"
+        iyz="-8.96051836966132E-09"
+        izz="4.65450652732413E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_ankle1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/fl_ankle1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_ankle1"
+    type="revolute">
+    <origin
+      xyz="0.332999999999946 0 0"
+      rpy="-3.13316320450768 -0.00663664144842005 1.30796805589786" />
+    <parent
+      link="fl_tibia" />
+    <child
+      link="fl_ankle1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="fl_ankle1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_ankle1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fl_ankle1_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--><joint
+    name="fl_ankle2"
+    type="revolute">
+    <origin
+      xyz="0.317411579340789 -0.057938265257049 -0.000398195563863113"
+      rpy="-3.13980706527822 -0.00663664144870868 1.30796805589888" />
+    <parent
+      link="fl_tibia" />
+    <child
+      link="fl_ankle2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint><!-->
+  <link
+    name="bl_hip">
+    <inertial>
+      <origin
+        xyz="0.0282493778011171 5.58098405673731E-05 -0.0025458451994235"
+        rpy="0 0 0" />
+      <mass
+        value="0.0359443464082496" />
+      <inertia
+        ixx="9.4364985732862E-06"
+        ixy="1.21872410896532E-08"
+        ixz="-2.39319042112897E-06"
+        iyy="2.4422596375907E-05"
+        iyz="-4.73944244968578E-09"
+        izz="2.707620203077E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_hip_frontal"
+    type="revolute">
+    <origin
+      xyz="-0.045 -0.1862 0.00021732"
+      rpy="-1.5708 0 -3.2416" />
+    <parent
+      link="body_link" />
+    <child
+      link="bl_hip" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="bl_hip_frontal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bl_hip_frontal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bl_hip_frontal_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="bl_femur">
+    <inertial>
+      <origin
+        xyz="0.097735664030511 6.1053197306371E-06 -0.015177702019726"
+        rpy="0 0 0" />
+      <mass
+        value="0.14183624144033" />
+      <inertia
+        ixx="2.78209084541693E-05"
+        ixy="-6.85901673387895E-09"
+        ixz="-2.53196051268353E-10"
+        iyy="4.88406444373774E-05"
+        iyz="-3.69749931028712E-09"
+        izz="6.7229990581419E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_hip_sagittal"
+    type="revolute">
+    <origin
+      xyz="0.103119129071278 0.000423815496092828 0"
+      rpy="1.57079632690475 0.718419414157781 1.57490626396013" />
+    <parent
+      link="bl_hip" />
+    <child
+      link="bl_femur" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="bl_hip_sagittal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bl_hip_sagittal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bl_hip_sagittal_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="bl_tibia">
+    <inertial>
+      <origin
+        xyz="0.108667373405208 -3.01269721454736E-05 0.00287556518947636"
+        rpy="0 0 0" />
+      <mass
+        value="0.0478195979882888" />
+      <inertia
+        ixx="8.45826223669303E-06"
+        ixy="-9.81416372659261E-09"
+        ixz="1.28979701650448E-06"
+        iyy="4.69254141126836E-05"
+        iyz="-4.22776893917143E-08"
+        izz="5.27941199036933E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_tibia.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_tibia.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_knee"
+    type="revolute">
+    <origin
+      xyz="0.18000000003612 0 -0.0431200000000808"
+      rpy="3.13472000571321 0 1.35943233275826" />
+    <parent
+      link="bl_femur" />
+    <child
+      link="bl_tibia" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="bl_knee_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bl_knee">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bl_knee_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--><link
+    name="bl_fibula">
+    <inertial>
+      <origin
+        xyz="0.173017618887026 -3.09157005551342E-10 -0.000119646307878016"
+        rpy="0 0 0" />
+      <mass
+        value="0.0281285567790405" />
+      <inertia
+        ixx="1.21294907481142E-06"
+        ixy="-2.40099988080764E-13"
+        ixz="-4.49710596151099E-08"
+        iyy="4.02491234658541E-05"
+        iyz="2.20003593228256E-14"
+        izz="4.07847539801219E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_fibula.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_fibula.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_control_rod"
+    type="revolute">
+    <origin
+      xyz="-0.0125876240234288 -0.0586633545977923 -0.000403178925966738"
+      rpy="0.00687263116363432 -1.51010961735398E-05 0.00219724206462962" />
+    <parent
+      link="bl_tibia" />
+    <child
+      link="bl_fibula" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint><!-->
+  <link
+    name="bl_ankle1">
+    <inertial>
+      <origin
+        xyz="0.0527701410273651 -1.66453811845102E-09 6.22932097571471E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0716006126035057" />
+      <inertia
+        ixx="9.73912803612694E-06"
+        ixy="-4.16771954895803E-12"
+        ixz="9.95982526453627E-12"
+        iyy="4.80525051443511E-05"
+        iyz="-8.96051836953186E-09"
+        izz="4.65450652732413E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_ankle1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/bl_ankle1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="bl_ankle1"
+    type="revolute">
+    <origin
+      xyz="0.33299999999459 0 0"
+      rpy="-3.13316320450778 -0.00663664144834673 1.30796805589786" />
+    <parent
+      link="bl_tibia" />
+    <child
+      link="bl_ankle1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="bl_ankle1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bl_ankle1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bl_ankle1_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--><joint
+    name="bl_ankle2"
+    type="revolute">
+    <origin
+      xyz="0.317411579339452 -0.0579382652570491 -0.000398195563858714"
+      rpy="-3.13980706527824 -0.00663664144863536 1.30796805589888" />
+    <parent
+      link="bl_tibia" />
+    <child
+      link="bl_ankle2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint><!-->
+  <link
+    name="br_hip">
+    <inertial>
+      <origin
+        xyz="0.0282493684503724 6.02934703621445E-05 0.00254584519658796"
+        rpy="0 0 0" />
+      <mass
+        value="0.0359443461080751" />
+      <inertia
+        ixx="9.43685186268733E-06"
+        ixy="-7.37780927648381E-08"
+        ixz="2.39318972307338E-06"
+        iyy="2.44222430693133E-05"
+        iyz="5.09645862724478E-09"
+        izz="2.70762020942481E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_hip_frontal"
+    type="revolute">
+    <origin
+      xyz="0.0449999999999997 -0.1862 0.000217315502645383"
+      rpy="-1.5707963267949 -0.00899577710337079 0" />
+    <parent
+      link="body_link" />
+    <child
+      link="br_hip" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="br_hip_frontal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="br_hip_frontal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="br_hip_frontal_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="br_femur">
+    <inertial>
+      <origin
+        xyz="0.0977320129592313 0.000213425413635948 0.0151762013715998"
+        rpy="0 0 0" />
+      <mass
+        value="0.141836258267776" />
+      <inertia
+        ixx="2.78230528087083E-05"
+        ixy="4.2944468321045E-09"
+        ixz="-1.68699040456136E-09"
+        iyy="4.88420494806604E-05"
+        iyz="2.5534531602839E-07"
+        izz="6.72264488064851E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_hip_sagittal"
+    type="revolute">
+    <origin
+      xyz="0.103120000000001 0 0"
+      rpy="-1.55698910598539 -0.709564137847273 1.5707963267949" />
+    <parent
+      link="br_hip" />
+    <child
+      link="br_femur" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="br_hip_sagittal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="br_hip_sagittal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="br_hip_sagittal_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="br_tibia">
+    <inertial>
+      <origin
+        xyz="0.108667400148144 5.36054204351918E-05 -0.00287522279079774"
+        rpy="0 0 0" />
+      <mass
+        value="0.0478195862237687" />
+      <inertia
+        ixx="8.45826069805717E-06"
+        ixy="2.0342600271494E-08"
+        ixz="-1.28967368706483E-06"
+        iyy="4.69264933964661E-05"
+        iyz="-9.01835036865154E-08"
+        izz="5.27930345314702E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_tibia.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_tibia.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_knee"
+    type="revolute">
+    <origin
+      xyz="0.179999999999994 0.000595348444749899 0.0431158898809868"
+      rpy="3.12354308330135 0.0134745477840334 1.35082136703004" />
+    <parent
+      link="br_femur" />
+    <child
+      link="br_tibia" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="br_knee_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="br_knee">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="br_knee_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <!--><link
+    name="br_fibula">
+    <inertial>
+      <origin
+        xyz="0.173017618727357 -3.39825265149862E-10 -0.000119646304498247"
+        rpy="0 0 0" />
+      <mass
+        value="0.028128556818969" />
+      <inertia
+        ixx="1.21294907488842E-06"
+        ixy="-2.35119259120967E-13"
+        ixz="-4.4971059512998E-08"
+        iyy="4.02491234671135E-05"
+        iyz="2.05500052843819E-14"
+        izz="4.07847539820153E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_fibula.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_fibula.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_control_rod"
+    type="revolute">
+    <origin
+      xyz="-0.0130911226541221 -0.0585478208866782 -0.000880441409336255"
+      rpy="0.0150368151646123 -3.42936700273888E-05 0.00228047132966131" />
+    <parent
+      link="br_tibia" />
+    <child
+      link="br_fibula" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint><!-->
+  <link
+    name="br_ankle">
+    <inertial>
+      <origin
+        xyz="0.0527701413832928 -5.98787075478668E-09 3.07167111190942E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.0716006134744624" />
+      <inertia
+        ixx="9.73912821038021E-06"
+        ixy="-9.99833578297556E-12"
+        ixz="6.12733558693394E-12"
+        iyy="4.80541438877767E-05"
+        iyz="-2.52914459535797E-08"
+        izz="4.6543427113121E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_ankle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://husky_reduced/meshes/br_ankle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="br_ankle"
+    type="revolute">
+    <origin
+      xyz="0.332999999999973 0 0"
+      rpy="-3.12284991813426 -0.0144859149234315 1.29924335391435" />
+    <parent
+      link="br_tibia" />
+    <child
+      link="br_ankle" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint>
+  <transmission name="br_ankle_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="br_ankle">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="br_ankle_motor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/husky</robotNamespace>
+    </plugin>
+  </gazebo>
+  <!--><joint
+    name="br_ankle2"
+    type="revolute">
+    <origin
+      xyz="0.316908019061517 -0.0577952660005815 -0.000869124498228915"
+      rpy="-3.12284991813426 -0.0144859149234315 1.29924335391435" />
+    <parent
+      link="br_tibia" />
+    <child
+      link="br_ankle2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="1000"
+      velocity="1000" />
+  </joint><!-->
+</robot>

@@ -1,0 +1,71 @@
+husky_reduced:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  
+  # Position Controllers ---------------------------------------
+  fr_hip_frontal_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: fr_hip_frontal
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  fr_hip_sagittal_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: fr_hip_sagittal
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  fr_knee_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: fr_knee
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  fr_ankle1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: fr_ankle1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  fl_hip_frontal_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: fl_hip_frontal
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  fl_hip_sagittal_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: fl_hip_sagittal
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  fl_knee_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: fl_knee
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  fl_ankle1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: fl_ankle1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  br_hip_frontal_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: br_hip_frontal
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  br_hip_sagittal_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: br_hip_sagittal
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  br_knee_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: br_knee
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  br_ankle1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: br_ankle1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  bl_hip_frontal_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: bl_hip_frontal
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  bl_hip_sagittal_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: bl_hip_sagittal
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  bl_knee_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: bl_knee
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  bl_ankle1_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: bl_ankle1
+    pid: {p: 100.0, i: 0.01, d: 10.0}
