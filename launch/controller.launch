@@ -1,13 +1,5 @@
 <launch>
-    <param name="robot_description" command="cat $(find husky)/urdf/husky.urdf"/>
-    <include file="$(find gazebo_ros)/launch/empty_world.launch" />
-    <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" respawn="false" args="-param robot_description -urdf -x 0 -y 0 -z 2 -model husky"
-    output="screen" />
  <!-- load the controllers -->
     <rosparam file="$(find husky)/config/husky_control.yaml" command="load"/>
     <node name="controller_spawner" pkg ="controller_manager" type="spawner" ns="/husky" args="fr_hip_frontal_position_controller fr_hip_sagittal_position_controller fr_knee_position_controller fr_ankle1_position_controller fl_hip_frontal_position_controller fl_hip_sagittal_position_controller fl_knee_position_controller fl_ankle1_position_controller br_hip_frontal_position_controller br_hip_sagittal_position_controller br_knee_position_controller br_ankle1_position_controller bl_hip_frontal_position_controller bl_hip_sagittal_position_controller bl_knee_position_controller bl_ankle1_position_controller joint_state_controller"/>
-    <!-- converts joint states to TF transforms -->
-    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
-        <remap from="/joint_states" to="/husky/joint_states" />
-    </node>
 </launch>

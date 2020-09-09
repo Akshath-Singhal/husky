@@ -1,5 +1,5 @@
 <package format="2">
-  <name>husky_reduced</name>
+  <name>husky</name>
   <version>1.0.0</version>
   <description>
     <p>URDF Description package for husky_reduced</p>
@@ -15,6 +15,9 @@ for husky_reduced robot</p>
   <depend>rviz</depend>
   <depend>joint_state_publisher</depend>
   <depend>gazebo</depend>
+  <depend>controller_manager</depend>
+  <depend>rqt_gui</depend>
+  <depend>effort_controllers</depend>
   <export>
     <architecture_independent />
   </export>

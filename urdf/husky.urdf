@@ -3,7 +3,7 @@
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="husky_reduced">
+  name="husky">
   <link name="base_link" />
   <joint name="base_link_to_body" type="fixed">
     <parent link="base_link"/>
@@ -31,7 +31,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/body_link.STL" />
+          filename="package://husky/meshes/body_link.STL" />
       </geometry>
       <material
         name="">
@@ -45,7 +45,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/body_link.STL" />
+          filename="package://husky/meshes/body_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -71,7 +71,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_hip.STL" />
+          filename="package://husky/meshes/fr_hip.STL" />
       </geometry>
       <material
         name="">
@@ -85,7 +85,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_hip.STL" />
+          filename="package://husky/meshes/fr_hip.STL" />
       </geometry>
     </collision>
   </link>
@@ -107,16 +107,6 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="fr_hip_frontal_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="fr_hip_frontal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="fr_hip_frontal_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
   <link
     name="fr_femur">
     <inertial>
@@ -139,7 +129,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_femur.STL" />
+          filename="package://husky/meshes/fr_femur.STL" />
       </geometry>
       <material
         name="">
@@ -153,7 +143,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_femur.STL" />
+          filename="package://husky/meshes/fr_femur.STL" />
       </geometry>
     </collision>
   </link>
@@ -175,16 +165,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="fr_hip_sagittal_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="fr_hip_sagittal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="fr_hip_sagittal_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+ 
   <link
     name="fr_tibia">
     <inertial>
@@ -207,7 +188,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_tibia.STL" />
+          filename="package://husky/meshes/fr_tibia.STL" />
       </geometry>
       <material
         name="">
@@ -221,7 +202,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_tibia.STL" />
+          filename="package://husky/meshes/fr_tibia.STL" />
       </geometry>
     </collision>
   </link>
@@ -243,16 +224,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="fr_knee_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="fr_knee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="fr_knee_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <!--><link
     name="fr_fibula">
     <inertial>
@@ -275,7 +247,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_fibula.STL" />
+          filename="package://husky/meshes/fr_fibula.STL" />
       </geometry>
       <material
         name="">
@@ -289,7 +261,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_fibula.STL" />
+          filename="package://husky/meshes/fr_fibula.STL" />
       </geometry>
     </collision>
   </link>
@@ -333,7 +305,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_ankle1.STL" />
+          filename="package://husky/meshes/fr_ankle1.STL" />
       </geometry>
       <material
         name="">
@@ -347,7 +319,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fr_ankle1.STL" />
+          filename="package://husky/meshes/fr_ankle1.STL" />
       </geometry>
     </collision>
   </link>
@@ -369,16 +341,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="fr_ankle1_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="fr_ankle1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="fr_ankle1_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <!--><gazebo>
     <plugin name="Myrobot_ClosedLoopPlugin" filename="libpegasus_gazebo_closed_loop_plugin.so">
        <joint>add_joint</joint>
@@ -428,7 +391,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_hip.STL" />
+          filename="package://husky/meshes/fl_hip.STL" />
       </geometry>
       <material
         name="">
@@ -442,7 +405,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_hip.STL" />
+          filename="package://husky/meshes/fl_hip.STL" />
       </geometry>
     </collision>
   </link>
@@ -464,16 +427,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="fl_hip_frontal_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="fl_hip_frontal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="fl_hip_frontal_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <link
     name="fl_femur">
     <inertial>
@@ -496,7 +450,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_femur.STL" />
+          filename="package://husky/meshes/fl_femur.STL" />
       </geometry>
       <material
         name="">
@@ -510,7 +464,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_femur.STL" />
+          filename="package://husky/meshes/fl_femur.STL" />
       </geometry>
     </collision>
   </link>
@@ -532,16 +486,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="fl_hip_sagittal_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="fl_hip_sagittal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="fl_hip_sagittal_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <link
     name="fl_tibia">
     <inertial>
@@ -564,7 +509,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_tibia.STL" />
+          filename="package://husky/meshes/fl_tibia.STL" />
       </geometry>
       <material
         name="">
@@ -578,7 +523,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_tibia.STL" />
+          filename="package://husky/meshes/fl_tibia.STL" />
       </geometry>
     </collision>
   </link>
@@ -600,16 +545,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="fl_knee_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="fl_knee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="fl_knee_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <!--><link
     name="fl_fibula">
     <inertial>
@@ -632,7 +568,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_fibula.STL" />
+          filename="package://husky/meshes/fl_fibula.STL" />
       </geometry>
       <material
         name="">
@@ -646,7 +582,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_fibula.STL" />
+          filename="package://husky/meshes/fl_fibula.STL" />
       </geometry>
     </collision>
   </link>
@@ -690,7 +626,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_ankle1.STL" />
+          filename="package://husky/meshes/fl_ankle1.STL" />
       </geometry>
       <material
         name="">
@@ -704,7 +640,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/fl_ankle1.STL" />
+          filename="package://husky/meshes/fl_ankle1.STL" />
       </geometry>
     </collision>
   </link>
@@ -726,16 +662,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="fl_ankle1_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="fl_ankle1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="fl_ankle1_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <!--><joint
     name="fl_ankle2"
     type="revolute">
@@ -776,7 +703,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_hip.STL" />
+          filename="package://husky/meshes/bl_hip.STL" />
       </geometry>
       <material
         name="">
@@ -790,7 +717,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_hip.STL" />
+          filename="package://husky/meshes/bl_hip.STL" />
       </geometry>
     </collision>
   </link>
@@ -812,16 +739,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="bl_hip_frontal_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="bl_hip_frontal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="bl_hip_frontal_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <link
     name="bl_femur">
     <inertial>
@@ -844,7 +762,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_femur.STL" />
+          filename="package://husky/meshes/bl_femur.STL" />
       </geometry>
       <material
         name="">
@@ -858,7 +776,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_femur.STL" />
+          filename="package://husky/meshes/bl_femur.STL" />
       </geometry>
     </collision>
   </link>
@@ -880,16 +798,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="bl_hip_sagittal_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="bl_hip_sagittal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="bl_hip_sagittal_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <link
     name="bl_tibia">
     <inertial>
@@ -912,7 +821,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_tibia.STL" />
+          filename="package://husky/meshes/bl_tibia.STL" />
       </geometry>
       <material
         name="">
@@ -926,7 +835,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_tibia.STL" />
+          filename="package://husky/meshes/bl_tibia.STL" />
       </geometry>
     </collision>
   </link>
@@ -948,16 +857,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="bl_knee_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="bl_knee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="bl_knee_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <!--><link
     name="bl_fibula">
     <inertial>
@@ -980,7 +880,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_fibula.STL" />
+          filename="package://husky/meshes/bl_fibula.STL" />
       </geometry>
       <material
         name="">
@@ -994,7 +894,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_fibula.STL" />
+          filename="package://husky/meshes/bl_fibula.STL" />
       </geometry>
     </collision>
   </link>
@@ -1038,7 +938,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_ankle1.STL" />
+          filename="package://husky/meshes/bl_ankle1.STL" />
       </geometry>
       <material
         name="">
@@ -1052,7 +952,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/bl_ankle1.STL" />
+          filename="package://husky/meshes/bl_ankle1.STL" />
       </geometry>
     </collision>
   </link>
@@ -1074,16 +974,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="bl_ankle1_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="bl_ankle1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="bl_ankle1_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <!--><joint
     name="bl_ankle2"
     type="revolute">
@@ -1124,7 +1015,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_hip.STL" />
+          filename="package://husky/meshes/br_hip.STL" />
       </geometry>
       <material
         name="">
@@ -1138,7 +1029,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_hip.STL" />
+          filename="package://husky/meshes/br_hip.STL" />
       </geometry>
     </collision>
   </link>
@@ -1160,16 +1051,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="br_hip_frontal_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="br_hip_frontal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="br_hip_frontal_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <link
     name="br_femur">
     <inertial>
@@ -1192,7 +1074,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_femur.STL" />
+          filename="package://husky/meshes/br_femur.STL" />
       </geometry>
       <material
         name="">
@@ -1206,7 +1088,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_femur.STL" />
+          filename="package://husky/meshes/br_femur.STL" />
       </geometry>
     </collision>
   </link>
@@ -1228,16 +1110,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="br_hip_sagittal_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="br_hip_sagittal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="br_hip_sagittal_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <link
     name="br_tibia">
     <inertial>
@@ -1260,7 +1133,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_tibia.STL" />
+          filename="package://husky/meshes/br_tibia.STL" />
       </geometry>
       <material
         name="">
@@ -1274,7 +1147,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_tibia.STL" />
+          filename="package://husky/meshes/br_tibia.STL" />
       </geometry>
     </collision>
   </link>
@@ -1296,16 +1169,7 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="br_knee_trans">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="br_knee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-    </joint>
-    <actuator name="br_knee_motor">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
+
   <!--><link
     name="br_fibula">
     <inertial>
@@ -1328,7 +1192,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_fibula.STL" />
+          filename="package://husky/meshes/br_fibula.STL" />
       </geometry>
       <material
         name="">
@@ -1342,7 +1206,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_fibula.STL" />
+          filename="package://husky/meshes/br_fibula.STL" />
       </geometry>
     </collision>
   </link>
@@ -1386,7 +1250,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_ankle.STL" />
+          filename="package://husky/meshes/br_ankle.STL" />
       </geometry>
       <material
         name="">
@@ -1400,12 +1264,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://husky_reduced/meshes/br_ankle.STL" />
+          filename="package://husky/meshes/br_ankle.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="br_ankle"
+    name="br_ankle1"
     type="revolute">
     <origin
       xyz="0.332999999999973 0 0"
@@ -1422,13 +1286,147 @@
       effort="1000"
       velocity="1000" />
   </joint>
-  <transmission name="br_ankle_trans">
+  <transmission name="bl_knee_trans">
     <type>transmission_interface/SimpleTransmission</type>
-    <joint name="br_ankle">
+    <joint name="bl_knee">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
     </joint>
-    <actuator name="br_ankle_motor">
+    <actuator name="bl_knee_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="bl_ankle1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bl_ankle1">
       <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bl_ankle1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="br_hip_frontal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="br_hip_frontal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="br_hip_frontal_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="br_hip_sagittal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="br_hip_sagittal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="br_hip_sagittal_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="br_knee_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="br_knee">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="br_knee_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fl_hip_frontal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_hip_frontal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fl_hip_frontal_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fl_hip_sagittal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_hip_sagittal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fl_hip_sagittal_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fl_knee_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_knee">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fl_knee_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fl_ankle1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_ankle1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fl_ankle1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="bl_hip_frontal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bl_hip_frontal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bl_hip_frontal_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="bl_hip_sagittal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bl_hip_sagittal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bl_hip_sagittal_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+ <transmission name="fr_hip_sagittal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_hip_sagittal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fr_hip_sagittal_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fr_knee_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_knee">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fr_knee_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fr_ankle1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_ankle1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fr_ankle1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="br_ankle1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="br_ankle1">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="br_ankle1_motor">
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <transmission name="fr_hip_frontal_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_hip_frontal">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="fr_hip_frontal_motor">
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -1437,7 +1435,7 @@
       <robotNamespace>/husky</robotNamespace>
     </plugin>
   </gazebo>
-  <!--><joint
+<!--joint
     name="br_ankle2"
     type="revolute">
     <origin
