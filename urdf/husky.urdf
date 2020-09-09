@@ -1289,7 +1289,7 @@
   <transmission name="bl_knee_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="bl_knee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="bl_knee_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1298,7 +1298,7 @@
   <transmission name="bl_ankle1_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="bl_ankle1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="bl_ankle1_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1307,7 +1307,7 @@
   <transmission name="br_hip_frontal_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="br_hip_frontal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="br_hip_frontal_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1316,7 +1316,7 @@
   <transmission name="br_hip_sagittal_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="br_hip_sagittal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="br_hip_sagittal_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1325,7 +1325,7 @@
   <transmission name="br_knee_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="br_knee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="br_knee_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1334,7 +1334,7 @@
   <transmission name="fl_hip_frontal_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="fl_hip_frontal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="fl_hip_frontal_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1343,7 +1343,7 @@
   <transmission name="fl_hip_sagittal_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="fl_hip_sagittal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="fl_hip_sagittal_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1352,7 +1352,7 @@
   <transmission name="fl_knee_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="fl_knee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="fl_knee_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1361,7 +1361,7 @@
   <transmission name="fl_ankle1_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="fl_ankle1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="fl_ankle1_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1370,7 +1370,7 @@
   <transmission name="bl_hip_frontal_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="bl_hip_frontal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="bl_hip_frontal_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1379,7 +1379,7 @@
   <transmission name="bl_hip_sagittal_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="bl_hip_sagittal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="bl_hip_sagittal_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1388,7 +1388,7 @@
  <transmission name="fr_hip_sagittal_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="fr_hip_sagittal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="fr_hip_sagittal_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1397,7 +1397,7 @@
   <transmission name="fr_knee_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="fr_knee">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="fr_knee_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1406,7 +1406,7 @@
   <transmission name="fr_ankle1_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="fr_ankle1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="fr_ankle1_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1415,7 +1415,7 @@
   <transmission name="br_ankle1_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="br_ankle1">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="br_ankle1_motor">
       <mechanicalReduction>1</mechanicalReduction>
@@ -1424,7 +1424,7 @@
   <transmission name="fr_hip_frontal_trans">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="fr_hip_frontal">
-      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
     </joint>
     <actuator name="fr_hip_frontal_motor">
       <mechanicalReduction>1</mechanicalReduction>

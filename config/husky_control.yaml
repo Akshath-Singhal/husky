@@ -8,64 +8,64 @@ husky:
   fr_hip_frontal_position_controller:
     type: effort_controllers/JointPositionController
     joint: fr_hip_frontal
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   fr_hip_sagittal_position_controller:
     type: effort_controllers/JointPositionController
     joint: fr_hip_sagittal
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   fr_knee_position_controller:
     type: effort_controllers/JointPositionController
     joint: fr_knee
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   fr_ankle1_position_controller:
     type: effort_controllers/JointPositionController
     joint: fr_ankle1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   fl_hip_frontal_position_controller:
     type: effort_controllers/JointPositionController
     joint: fl_hip_frontal
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   fl_hip_sagittal_position_controller:
     type: effort_controllers/JointPositionController
     joint: fl_hip_sagittal
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   fl_knee_position_controller:
     type: effort_controllers/JointPositionController
     joint: fl_knee
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   fl_ankle1_position_controller:
     type: effort_controllers/JointPositionController
     joint: fl_ankle1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   br_hip_frontal_position_controller:
     type: effort_controllers/JointPositionController
     joint: br_hip_frontal
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   br_hip_sagittal_position_controller:
     type: effort_controllers/JointPositionController
     joint: br_hip_sagittal
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   br_knee_position_controller:
     type: effort_controllers/JointPositionController
     joint: br_knee
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   br_ankle1_position_controller:
     type: effort_controllers/JointPositionController
     joint: br_ankle1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   bl_hip_frontal_position_controller:
     type: effort_controllers/JointPositionController
     joint: bl_hip_frontal
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   bl_hip_sagittal_position_controller:
     type: effort_controllers/JointPositionController
     joint: bl_hip_sagittal
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   bl_knee_position_controller:
     type: effort_controllers/JointPositionController
     joint: bl_knee
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}
   bl_ankle1_position_controller:
     type: effort_controllers/JointPositionController
     joint: bl_ankle1
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 1.0, i: 0.0001, d: 0.1}

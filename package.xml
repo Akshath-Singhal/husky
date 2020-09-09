@@ -10,12 +10,23 @@ for husky_reduced robot</p>
   <maintainer email="TODO@email.com" />
   <license>BSD</license>
   <buildtool_depend>catkin</buildtool_depend>
+    <build_depend>urdf</build_depend>
+  <build_depend>controller_manager</build_depend>
+  <build_depend>joint_state_controller</build_depend>
+  <build_depend>robot_state_publisher</build_depend>
+
+  <build_export_depend>urdf</build_export_depend>
+  <build_export_depend>controller_manager</build_export_depend>
+  <build_export_depend>joint_state_controller</build_export_depend>
+  <build_export_depend>robot_state_publisher</build_export_depend>
+
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>controller_manager</exec_depend>
+  <exec_depend>joint_state_controller</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
   <depend>roslaunch</depend>
-  <depend>robot_state_publisher</depend>
   <depend>rviz</depend>
-  <depend>joint_state_publisher</depend>
   <depend>gazebo</depend>
-  <depend>controller_manager</depend>
   <depend>rqt_gui</depend>
   <depend>effort_controllers</depend>
   <export>
